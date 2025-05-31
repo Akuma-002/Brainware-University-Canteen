@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
+import List from './List';
+import { Outlet } from 'react-router-dom';
 import bgImage from '/assets/images/image.png';
-export const Home = () => {
-  return (
-    <div className='mainBox' style={{ backgroundImage: `url(${bgImage})` }}>
-        
-    </div>
-  )
-}
+
+const Home = () => (
+  <div className="mainBox">
+    <div className="showBox" style={{ backgroundImage: `url(${bgImage})` }}></div>
+    <List />
+    <Outlet />
+  </div>
+);
+
+export default Home;
