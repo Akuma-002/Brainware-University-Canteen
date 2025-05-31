@@ -29,7 +29,7 @@ const Navbar = () => {
 
                 {/* Logo */}
                 <NavLink to="/" className="flex items-center gap-2">
-                    <img src={"https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/dummyLogoWhite.svg"} alt="logo" className={`h-9 ${isScrolled && "invert opacity-80"}`} />
+                    <img src={"/logo.png"} alt="logo" className={`h-9 ${isScrolled && "invert opacity-80"}`} />
                 </NavLink>
 
                 {/* Desktop Nav */}
