@@ -5,10 +5,12 @@ import NonVeg from './Components/NonVeg';
 import Both from './Components/Both';
 import React from 'react';
 import Navbar from './Components/Navbar'
+import Footer from './Components/Footer';
 function App() {
   return (
     <>
     <Navbar/>
+    <div className='heading'><h1>Brainware University Canteen</h1></div>
     <Routes>
       <Route path="/home/*" element={<Home />}>
         <Route path="veg" element={<Veg />} />
@@ -18,7 +20,8 @@ function App() {
         {/* <Route index element={<Veg />} /> */}
       </Route>
     </Routes>
-    
+    <hr/>
+    <Footer/>
     </>
   );
 }
