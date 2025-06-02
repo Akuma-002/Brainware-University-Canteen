@@ -1,0 +1,546 @@
+[
+    {
+        "Name": "Palak Paneer",
+        "Description": "A traditional Indian recipe loved by all.",
+        "Type": "Veg",
+        "Price": 370,
+        "Time": "19 min",
+        "Image": "/web/Palak Paneer.png"
+    },
+    {
+        "Name": "Chicken 65",
+        "Description": "A traditional Indian recipe loved by all.",
+        "Type": "Non-Veg",
+        "Price": 460,
+        "Time": "13 min",
+        "Image": "/web/Chicken 65.png"
+    },
+    {
+        "Name": "Aloo Paratha",
+        "Description": "Cooked to perfection for an unforgettable taste.",
+        "Type": "Veg",
+        "Price": 456,
+        "Time": "10 min",
+        "Image": "/web/Aloo Paratha.png"
+    },
+    {
+        "Name": "Fish Fry",
+        "Description": "Served hot with fresh ingredients and perfect seasoning.",
+        "Type": "Non-Veg",
+        "Price": 270,
+        "Time": "20 min",
+        "Image": "/web/Fish Fry.png"
+    },
+    {
+        "Name": "Egg Curry",
+        "Description": "Cooked to perfection for an unforgettable taste.",
+        "Type": "Non-Veg",
+        "Price": 137,
+        "Time": "19 min",
+        "Image": "/web/Egg Curry.png"
+    },
+    {
+        "Name": "Masala Dosa",
+        "Description": "Cooked to perfection for an unforgettable taste.",
+        "Type": "Veg",
+        "Price": 411,
+        "Time": "20 min",
+        "Image": "/web/Masala Dosa.png"
+    },
+    {
+        "Name": "Tandoori Chicken",
+        "Description": "A traditional Indian recipe loved by all.",
+        "Type": "Non-Veg",
+        "Price": 293,
+        "Time": "20 min",
+        "Image": "/web/Tandoori Chicken.png"
+    },
+    {
+        "Name": "Palak Paneer",
+        "Description": "A traditional Indian recipe loved by all.",
+        "Type": "Veg",
+        "Price": 110,
+        "Time": "11 min",
+        "Image": "/web/Palak Paneer.png"
+    },
+    {
+        "Name": "Keema Pav",
+        "Description": "A traditional Indian recipe loved by all.",
+        "Type": "Non-Veg",
+        "Price": 396,
+        "Time": "11 min",
+        "Image": "/web/Keema Pav.png"
+    },
+    {
+        "Name": "Egg Curry",
+        "Description": "An indulgent dish for every food lover.",
+        "Type": "Non-Veg",
+        "Price": 182,
+        "Time": "18 min",
+        "Image": "/web/Egg Curry.png"
+    },
+    {
+        "Name": "Masala Dosa",
+        "Description": "A delicious and flavorful dish made with aromatic spices.",
+        "Type": "Veg",
+        "Price": 463,
+        "Time": "13 min",
+        "Image": "/web/Masala Dosa.png"
+    },
+    {
+        "Name": "Keema Pav",
+        "Description": "Served hot with fresh ingredients and perfect seasoning.",
+        "Type": "Non-Veg",
+        "Price": 404,
+        "Time": "14 min",
+        "Image": "/web/Keema Pav.png"
+    },
+    {
+        "Name": "Chicken Biryani",
+        "Description": "A traditional Indian recipe loved by all.",
+        "Type": "Non-Veg",
+        "Price": 419,
+        "Time": "20 min",
+        "Image": "/web/Chicken Biryani.png"
+    },
+    {
+        "Name": "Paneer Butter Masala",
+        "Description": "Served hot with fresh ingredients and perfect seasoning.",
+        "Type": "Veg",
+        "Price": 236,
+        "Time": "15 min",
+        "Image": "/web/Paneer Butter Masala.png"
+    },
+    {
+        "Name": "Butter Chicken",
+        "Description": "A traditional Indian recipe loved by all.",
+        "Type": "Non-Veg",
+        "Price": 458,
+        "Time": "16 min",
+        "Image": "/web/Butter Chicken.png"
+    },
+    {
+        "Name": "Tandoori Chicken",
+        "Description": "An indulgent dish for every food lover.",
+        "Type": "Non-Veg",
+        "Price": 285,
+        "Time": "16 min",
+        "Image": "/web/Tandoori Chicken.png"
+    },
+    {
+        "Name": "Tandoori Chicken",
+        "Description": "A traditional Indian recipe loved by all.",
+        "Type": "Non-Veg",
+        "Price": 325,
+        "Time": "13 min",
+        "Image": "/web/Tandoori Chicken.png"
+    },
+    {
+        "Name": "Veg Biryani",
+        "Description": "An indulgent dish for every food lover.",
+        "Type": "Veg",
+        "Price": 124,
+        "Time": "14 min",
+        "Image": "/web/Veg Biryani.png"
+    },
+    {
+        "Name": "Rajma Chawal",
+        "Description": "A traditional Indian recipe loved by all.",
+        "Type": "Veg",
+        "Price": 237,
+        "Time": "18 min",
+        "Image": "/web/Rajma Chawal.png"
+    },
+    {
+        "Name": "Egg Curry",
+        "Description": "A delicious and flavorful dish made with aromatic spices.",
+        "Type": "Non-Veg",
+        "Price": 301,
+        "Time": "18 min",
+        "Image": "/web/Egg Curry.png"
+    },
+    {
+        "Name": "Mutton Curry",
+        "Description": "A delicious and flavorful dish made with aromatic spices.",
+        "Type": "Non-Veg",
+        "Price": 235,
+        "Time": "13 min",
+        "Image": "/web/Mutton Curry.png"
+    },
+    {
+        "Name": "Masala Dosa",
+        "Description": "A traditional Indian recipe loved by all.",
+        "Type": "Veg",
+        "Price": 406,
+        "Time": "13 min",
+        "Image": "/web/Masala Dosa.png"
+    },
+    {
+        "Name": "Veg Biryani",
+        "Description": "An indulgent dish for every food lover.",
+        "Type": "Veg",
+        "Price": 353,
+        "Time": "12 min",
+        "Image": "/web/Veg Biryani.png"
+    },
+    {
+        "Name": "Fish Fry",
+        "Description": "A traditional Indian recipe loved by all.",
+        "Type": "Non-Veg",
+        "Price": 189,
+        "Time": "13 min",
+        "Image": "/web/Fish Fry.png"
+    },
+    {
+        "Name": "Egg Curry",
+        "Description": "An indulgent dish for every food lover.",
+        "Type": "Non-Veg",
+        "Price": 449,
+        "Time": "15 min",
+        "Image": "/web/Egg Curry.png"
+    },
+    {
+        "Name": "Masala Dosa",
+        "Description": "An indulgent dish for every food lover.",
+        "Type": "Veg",
+        "Price": 112,
+        "Time": "20 min",
+        "Image": "/web/Masala Dosa.png"
+    },
+    {
+        "Name": "Mutton Curry",
+        "Description": "A delicious and flavorful dish made with aromatic spices.",
+        "Type": "Non-Veg",
+        "Price": 152,
+        "Time": "19 min",
+        "Image": "/web/Mutton Curry.png"
+    },
+    {
+        "Name": "Rajma Chawal",
+        "Description": "A traditional Indian recipe loved by all.",
+        "Type": "Veg",
+        "Price": 307,
+        "Time": "13 min",
+        "Image": "/web/Rajma Chawal.png"
+    },
+    {
+        "Name": "Chicken Tikka",
+        "Description": "A traditional Indian recipe loved by all.",
+        "Type": "Non-Veg",
+        "Price": 189,
+        "Time": "20 min",
+        "Image": "/web/Chicken Tikka.png"
+    },
+    {
+        "Name": "Palak Paneer",
+        "Description": "An indulgent dish for every food lover.",
+        "Type": "Veg",
+        "Price": 393,
+        "Time": "13 min",
+        "Image": "/web/Palak Paneer.png"
+    },
+    {
+        "Name": "Chicken 65",
+        "Description": "An indulgent dish for every food lover.",
+        "Type": "Non-Veg",
+        "Price": 335,
+        "Time": "12 min",
+        "Image": "/web/Chicken 65.png"
+    },
+    {
+        "Name": "Chole Bhature",
+        "Description": "Served hot with fresh ingredients and perfect seasoning.",
+        "Type": "Veg",
+        "Price": 342,
+        "Time": "12 min",
+        "Image": "/web/Chole Bhature.png"
+    },
+    {
+        "Name": "Aloo Paratha",
+        "Description": "Cooked to perfection for an unforgettable taste.",
+        "Type": "Veg",
+        "Price": 282,
+        "Time": "14 min",
+        "Image": "/web/Aloo Paratha.png"
+    },
+    {
+        "Name": "Veg Biryani",
+        "Description": "Cooked to perfection for an unforgettable taste.",
+        "Type": "Veg",
+        "Price": 285,
+        "Time": "18 min",
+        "Image": "/web/Veg Biryani.png"
+    },
+    {
+        "Name": "Keema Pav",
+        "Description": "Served hot with fresh ingredients and perfect seasoning.",
+        "Type": "Non-Veg",
+        "Price": 481,
+        "Time": "12 min",
+        "Image": "/web/Keema Pav.png"
+    },
+    {
+        "Name": "Dal Makhani",
+        "Description": "Cooked to perfection for an unforgettable taste.",
+        "Type": "Veg",
+        "Price": 476,
+        "Time": "19 min",
+        "Image": "/web/Dal Makhani.png"
+    },
+    {
+        "Name": "Prawn Masala",
+        "Description": "A traditional Indian recipe loved by all.",
+        "Type": "Non-Veg",
+        "Price": 436,
+        "Time": "20 min",
+        "Image": "/web/Prawn Masala.png"
+    },
+    {
+        "Name": "Chicken Biryani",
+        "Description": "A traditional Indian recipe loved by all.",
+        "Type": "Non-Veg",
+        "Price": 289,
+        "Time": "10 min",
+        "Image": "/web/Chicken Biryani.png"
+    },
+    {
+        "Name": "Dal Makhani",
+        "Description": "Cooked to perfection for an unforgettable taste.",
+        "Type": "Veg",
+        "Price": 310,
+        "Time": "19 min",
+        "Image": "/web/Dal Makhani.png"
+    },
+    {
+        "Name": "Keema Pav",
+        "Description": "Served hot with fresh ingredients and perfect seasoning.",
+        "Type": "Non-Veg",
+        "Price": 349,
+        "Time": "11 min",
+        "Image": "/web/Keema Pav.png"
+    },
+    {
+        "Name": "Masala Dosa",
+        "Description": "A traditional Indian recipe loved by all.",
+        "Type": "Veg",
+        "Price": 425,
+        "Time": "15 min",
+        "Image": "/web/Masala Dosa.png"
+    },
+    {
+        "Name": "Dal Makhani",
+        "Description": "An indulgent dish for every food lover.",
+        "Type": "Veg",
+        "Price": 148,
+        "Time": "14 min",
+        "Image": "/web/Dal Makhani.png"
+    },
+    {
+        "Name": "Rajma Chawal",
+        "Description": "An indulgent dish for every food lover.",
+        "Type": "Veg",
+        "Price": 292,
+        "Time": "11 min",
+        "Image": "/web/Rajma Chawal.png"
+    },
+    {
+        "Name": "Palak Paneer",
+        "Description": "An indulgent dish for every food lover.",
+        "Type": "Veg",
+        "Price": 239,
+        "Time": "19 min",
+        "Image": "/web/Palak Paneer.png"
+    },
+    {
+        "Name": "Paneer Butter Masala",
+        "Description": "A delicious and flavorful dish made with aromatic spices.",
+        "Type": "Veg",
+        "Price": 433,
+        "Time": "12 min",
+        "Image": "/web/Paneer Butter Masala.png"
+    },
+    {
+        "Name": "Tandoori Chicken",
+        "Description": "A delicious and flavorful dish made with aromatic spices.",
+        "Type": "Non-Veg",
+        "Price": 291,
+        "Time": "13 min",
+        "Image": "/web/Tandoori Chicken.png"
+    },
+    {
+        "Name": "Masala Dosa",
+        "Description": "Served hot with fresh ingredients and perfect seasoning.",
+        "Type": "Veg",
+        "Price": 421,
+        "Time": "16 min",
+        "Image": "/web/Masala Dosa.png"
+    },
+    {
+        "Name": "Egg Curry",
+        "Description": "Cooked to perfection for an unforgettable taste.",
+        "Type": "Non-Veg",
+        "Price": 286,
+        "Time": "19 min",
+        "Image": "/web/Egg Curry.png"
+    },
+    {
+        "Name": "Prawn Masala",
+        "Description": "Served hot with fresh ingredients and perfect seasoning.",
+        "Type": "Non-Veg",
+        "Price": 214,
+        "Time": "20 min",
+        "Image": "/web/Prawn Masala.png"
+    },
+    {
+        "Name": "Veg Biryani",
+        "Description": "An indulgent dish for every food lover.",
+        "Type": "Veg",
+        "Price": 322,
+        "Time": "14 min",
+        "Image": "/web/Veg Biryani.png"
+    },
+    {
+        "Name": "Vegetable Pulao",
+        "Description": "An indulgent dish for every food lover.",
+        "Type": "Veg",
+        "Price": 187,
+        "Time": "12 min",
+        "Image": "/web/Vegetable Pulao.png"
+    },
+    {
+        "Name": "Dal Makhani",
+        "Description": "An indulgent dish for every food lover.",
+        "Type": "Veg",
+        "Price": 244,
+        "Time": "11 min",
+        "Image": "/web/Dal Makhani.png"
+    },
+    {
+        "Name": "Egg Curry",
+        "Description": "A delicious and flavorful dish made with aromatic spices.",
+        "Type": "Non-Veg",
+        "Price": 277,
+        "Time": "20 min",
+        "Image": "/web/Egg Curry.png"
+    },
+    {
+        "Name": "Egg Curry",
+        "Description": "Served hot with fresh ingredients and perfect seasoning.",
+        "Type": "Non-Veg",
+        "Price": 440,
+        "Time": "17 min",
+        "Image": "/web/Egg Curry.png"
+    },
+    {
+        "Name": "Veg Biryani",
+        "Description": "A traditional Indian recipe loved by all.",
+        "Type": "Veg",
+        "Price": 338,
+        "Time": "13 min",
+        "Image": "/web/Veg Biryani.png"
+    },
+    {
+        "Name": "Palak Paneer",
+        "Description": "A traditional Indian recipe loved by all.",
+        "Type": "Veg",
+        "Price": 434,
+        "Time": "10 min",
+        "Image": "/web/Palak Paneer.png"
+    },
+    {
+        "Name": "Veg Biryani",
+        "Description": "Served hot with fresh ingredients and perfect seasoning.",
+        "Type": "Veg",
+        "Price": 170,
+        "Time": "18 min",
+        "Image": "/web/Veg Biryani.png"
+    },
+    {
+        "Name": "Tandoori Chicken",
+        "Description": "A traditional Indian recipe loved by all.",
+        "Type": "Non-Veg",
+        "Price": 289,
+        "Time": "10 min",
+        "Image": "/web/Tandoori Chicken.png"
+    },
+    {
+        "Name": "Vegetable Pulao",
+        "Description": "Served hot with fresh ingredients and perfect seasoning.",
+        "Type": "Veg",
+        "Price": 442,
+        "Time": "14 min",
+        "Image": "/web/Vegetable Pulao.png"
+    },
+    {
+        "Name": "Rajma Chawal",
+        "Description": "An indulgent dish for every food lover.",
+        "Type": "Veg",
+        "Price": 136,
+        "Time": "16 min",
+        "Image": "/web/Rajma Chawal.png"
+    },
+    {
+        "Name": "Butter Chicken",
+        "Description": "An indulgent dish for every food lover.",
+        "Type": "Non-Veg",
+        "Price": 429,
+        "Time": "17 min",
+        "Image": "/web/Butter Chicken.png"
+    },
+    {
+        "Name": "Egg Curry",
+        "Description": "A delicious and flavorful dish made with aromatic spices.",
+        "Type": "Non-Veg",
+        "Price": 320,
+        "Time": "15 min",
+        "Image": "/web/Egg Curry.png"
+    },
+    {
+        "Name": "Keema Pav",
+        "Description": "A traditional Indian recipe loved by all.",
+        "Type": "Non-Veg",
+        "Price": 371,
+        "Time": "13 min",
+        "Image": "/web/Keema Pav.png"
+    },
+    {
+        "Name": "Egg Curry",
+        "Description": "A delicious and flavorful dish made with aromatic spices.",
+        "Type": "Non-Veg",
+        "Price": 432,
+        "Time": "11 min",
+        "Image": "/web/Egg Curry.png"
+    },
+    {
+        "Name": "Keema Pav",
+        "Description": "Cooked to perfection for an unforgettable taste.",
+        "Type": "Non-Veg",
+        "Price": 241,
+        "Time": "18 min",
+        "Image": "/web/Keema Pav.png"
+    },
+    {
+        "Name": "Butter Chicken",
+        "Description": "A delicious and flavorful dish made with aromatic spices.",
+        "Type": "Non-Veg",
+        "Price": 477,
+        "Time": "14 min",
+        "Image": "/web/Butter Chicken.png"
+    },
+    {
+        "Name": "Chicken Biryani",
+        "Description": "Served hot with fresh ingredients and perfect seasoning.",
+        "Type": "Non-Veg",
+        "Price": 341,
+        "Time": "14 min",
+        "Image": "/web/Chicken Biryani.png"
+    },
+    {
+        "Name": "Chole Bhature",
+        "Description": "An indulgent dish for every food lover.",
+        "Type": "Veg",
+        "Price": 240,
+        "Time": "13 min",
+        "Image": "/web/Chole Bhature.png"
+    }
+]

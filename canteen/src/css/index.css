@@ -8,3 +8,14 @@
   height: 650px;
 }
 
+.containter{
+  display: inline-block;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.prductImage{
+  height: 150px;
+  width: fit-content;
+}
