@@ -1,4 +1,5 @@
 /*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Share+Tech&display=swap');
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -646,7 +647,6 @@
     }
   }
 }
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Share+Tech&display=swap');
 .showBox {
   background-size: cover;
   width: 100%;

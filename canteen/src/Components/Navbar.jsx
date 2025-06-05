@@ -50,7 +50,7 @@ const Navbar = () => {
                     <circle cx="11" cy="11" r="8" />
                     <line x1="21" y1="21" x2="16.65" y2="16.65" />
                 </svg>
-                <button className="bg-black text-white px-8 py-2.5 rounded-full ml-4 transition-all duration-500">
+                <button onClick={()=>{}} className="bg-black text-white px-8 py-2.5 rounded-full ml-4 transition-all duration-500">
                     Login
                 </button>
             </div>
