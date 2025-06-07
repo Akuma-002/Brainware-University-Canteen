@@ -8,18 +8,18 @@ import Navbar from './Components/Navbar'
 import Footer from './Components/Footer';
 import Login from './Components/Login';
 import LoginContext from './Context/LoginContext';
-import 
+import SignUp from './Components/SignUp';
 function App() {
   const location = useLocation();
   const isLoginPage = location.pathname === '/login';
+  const isSignUpPage = location.pathname === '/signup';
 
   return (
     <LoginContext>
-    {!isLoginPage && <Navbar />}
-    
+    {!isLoginPage && !isSignUpPage && <Navbar />}
     <Routes>
     <Route path='/login' element={<Login/>} />
-
+    <Route path='/signup' element={<SignUp/>}/>
 
       <Route path="/home/*" element={<Home />}>
         <Route path="veg" element={<Veg />} />
@@ -30,7 +30,7 @@ function App() {
         {/* <Route index element={<Veg />} /> */}
       </Route>
     </Routes>
-    {!isLoginPage && (
+    {!isLoginPage && !isSignUpPage && (
         <>
           <hr />
           <Footer />

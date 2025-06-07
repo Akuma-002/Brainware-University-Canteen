@@ -1,7 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { LoginDataContext } from '../Context/LoginContext';
 const Navbar = () => {
+    const navigate = useNavigate()
+    const data = useContext(LoginDataContext);
+    const {loginStatus, setLoginStatus} = data;
     const navLinks = [
         { name: 'Home', path: '/home' },
         { name: 'Products', path: '/product' },
@@ -50,9 +54,11 @@ const Navbar = () => {
                     <circle cx="11" cy="11" r="8" />
                     <line x1="21" y1="21" x2="16.65" y2="16.65" />
                 </svg>
-                <button onClick={()=>{}} className="bg-black text-white px-8 py-2.5 rounded-full ml-4 transition-all duration-500">
+                {!loginStatus?(<button onClick={()=>{navigate("/login")}} className="bg-black text-white px-8 py-2.5 rounded-full ml-4 transition-all duration-500">
                     Login
-                </button>
+                </button>) : (<button onClick={()=>{setLoginStatus(false)}} className="bg-black text-white px-8 py-2.5 rounded-full ml-4 transition-all duration-500">
+                    Logout
+                </button>)}
             </div>
 
             {/* Mobile Menu Button */}
