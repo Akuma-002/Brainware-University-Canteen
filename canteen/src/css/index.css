@@ -47,3 +47,24 @@ hr{
   width: fit-content;
   border-radius: 10px;
 }
+
+
+.loginBackground{
+  width:100%;
+  height:100vh;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  background-position: center;
+  filter: blur(5px);
+  z-index: 0;
+}
+
+.loginBox{
+  position: absolute;
+  top : 100px;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+
+}

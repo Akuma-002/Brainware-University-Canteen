@@ -6,6 +6,7 @@ import bgImage from '/assets/images/image.png';
 const Home = () => (
   <div className="mainBox ">
     <div className="showBox " style={{ backgroundImage: `url(${bgImage})` }}></div>
+    <div className='heading'><h1>Brainware University Canteen</h1></div>
     <List />
     <Outlet />
   </div>
