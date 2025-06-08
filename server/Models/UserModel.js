@@ -30,18 +30,6 @@ const UserSchema = new mongoose.Schema({
         default: 'customer'
     },
 
-    // Address (can store multiple)
-    // addresses: [{
-    //     label: { 
-    //         type: String, 
-    //         default: 'Home' 
-    //     }, // Home / Office etc.
-    //     street: String,
-    //     city: String,
-    //     state: String,
-    //     pincode: String,
-    //     country: { type: String, default: 'India' }
-    // }],
 
     // Cart
     cart: [{
