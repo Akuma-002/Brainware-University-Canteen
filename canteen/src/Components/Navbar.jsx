@@ -1,11 +1,34 @@
 import React from 'react';
+import axios from 'axios';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { LoginDataContext } from '../Context/LoginContext';
+import { UserDataContext } from '../Context/UserContext';
+import { useEffect } from 'react';
 const Navbar = () => {
     const navigate = useNavigate()
-    const data = useContext(LoginDataContext);
-    const {loginStatus, setLoginStatus} = data;
+    const loginData = useContext(LoginDataContext);
+    const userData = useContext(UserDataContext);
+    const {loginStatus, setLoginStatus, studentCode} = loginData;
+    const {name, setName, email, setEmail, phoneNumber, setPhoneNumber, setStudentCode, password, setPassword,avatar, setAvatar, role, setRole, cart, setCart, orders, setOrders} = userData
+    
+    useEffect(() => {
+        if (loginStatus && studentCode) {
+            axios.get("http://localhost:2007/user", { params: { studentCode } })
+                .then((result) => {
+                    setName(result.data.name);
+                    setEmail(result.data.email);
+                    setPhoneNumber(result.data.phoneNumber);
+                    setStudentCode(result.data.studentCode);
+                    setCart(result.data.cart);
+                    setOrders(result.data.orders);
+                    setAvatar(result.data.avatar);
+                })  
+                .catch((error) => {
+                    console.error(error);
+                });
+        }
+    }, [loginStatus, studentCode]);
     const navLinks = [
         { name: 'Home', path: '/home' },
         { name: 'Products', path: '/product' },
@@ -23,7 +46,8 @@ const Navbar = () => {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
-
+    console.log(name);
+    console.log(avatar);
     return (
         <nav  className={`fixed top-0 left-0  w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50 ${isScrolled ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4" : "py-4 md:py-6"}`}>
             {/* Logo */}
@@ -56,9 +80,17 @@ const Navbar = () => {
                 </svg>
                 {!loginStatus?(<button onClick={()=>{navigate("/login")}} className="bg-black text-white px-8 py-2.5 rounded-full ml-4 transition-all duration-500">
                     Login
-                </button>) : (<button onClick={()=>{setLoginStatus(false)}} className="bg-black text-white px-8 py-2.5 rounded-full ml-4 transition-all duration-500">
-                    Logout
-                </button>)}
+                </button>) : (
+                    <div class="flex flex-wrap justify-center gap-12">
+    <div className="relative">
+        <img className="h-8 w-8 rounded-full"
+            src={avatar}
+            alt="userImage1"/>
+        <div className="absolute -top-1 -right-1 flex items-center justify-center h-4 w-4 bg-blue-500 rounded-full">
+            <p className="text-white text-xxs">{cart}</p>
+        </div>
+    </div>
+</div>)}
             </div>
 
             {/* Mobile Menu Button */}
@@ -89,9 +121,19 @@ const Navbar = () => {
                     New Launch
                 </button>
 
-                <button className="bg-black text-white px-8 py-2.5 rounded-full transition-all duration-500">
+                {!loginStatus?(<button onClick={()=>{navigate("/login")}} className="bg-black text-white px-8 py-2.5 rounded-full ml-4 transition-all duration-500">
                     Login
-                </button>
+                </button>) : (
+                    <div class="flex flex-wrap justify-center gap-12">
+    <div className="relative">
+        <img className="h-8 w-8 rounded-full"
+            src={avatar}
+            alt="userImage1"/>
+        <div className="absolute -top-1 -right-1 flex items-center justify-center h-4 w-4 bg-blue-500 rounded-full">
+            <p className="text-white text-xxs">{cart}</p>
+        </div>
+    </div>
+</div>)}
             </div>
         </nav>
     );

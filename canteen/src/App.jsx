@@ -8,7 +8,9 @@ import Navbar from './Components/Navbar'
 import Footer from './Components/Footer';
 import Login from './Components/Login';
 import LoginContext from './Context/LoginContext';
+import UserContext from './Context/UserContext';
 import SignUp from './Components/SignUp';
+
 function App() {
   const location = useLocation();
   const isLoginPage = location.pathname === '/login';
@@ -16,26 +18,29 @@ function App() {
 
   return (
     <LoginContext>
-    {!isLoginPage && !isSignUpPage && <Navbar />}
-    <Routes>
-    <Route path='/login' element={<Login/>} />
-    <Route path='/signup' element={<SignUp/>}/>
+      <UserContext>
+      {!isLoginPage && !isSignUpPage && <Navbar />}
+      <Routes>
+      <Route path='/login' element={<Login/>} />
+      <Route path='/signup' element={<SignUp/>}/>
 
-      <Route path="/home/*" element={<Home />}>
-        <Route path="veg" element={<Veg />} />
-        <Route path="non-veg" element={<NonVeg />} />
-        <Route path="both" element={<Both />} />
-        
-        {/* Optional: Default content for /home */}
-        {/* <Route index element={<Veg />} /> */}
-      </Route>
-    </Routes>
-    {!isLoginPage && !isSignUpPage && (
-        <>
-          <hr />
-          <Footer />
-        </>
-      )}
+        <Route path="/home/*" element={<Home />}>
+          <Route path="veg" element={<Veg />} />
+          <Route path="non-veg" element={<NonVeg />} />
+          <Route path="both" element={<Both />} />
+          
+          {/* Optional: Default content for /home */}
+          {/* <Route index element={<Veg />} /> */}
+        </Route>
+      </Routes>
+      {!isLoginPage && !isSignUpPage && (
+          <>
+            <hr />
+            <Footer />
+          </>
+        )
+      }
+      </UserContext>
     </LoginContext>
   );
 }

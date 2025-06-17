@@ -56,7 +56,21 @@ app.post("/login", (req, res)=>{
     })
     .catch((error)=>{console.log(error)});
 })
-
+app.get("/user", async (req, res) => {
+    const { studentCode } = req.query;
+    if (!studentCode) {
+        return res.status(400).json({ error: "Email is required" });
+    }
+    try {
+        const user = await UserModel.findOne({ studentCode });
+        if (!user) {
+        return res.status(404).json({ error: "User not found" });
+        }
+        res.json(user);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 
 
 //starting server 
