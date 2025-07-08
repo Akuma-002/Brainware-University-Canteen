@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const UserModel = require("./Models/UserModel");
 const notifier = require('node-notifier');
+require("dotenv").config();  // Add this line first
 //backend port 
 const port = 2007
 //creating app using express
@@ -12,7 +13,14 @@ app.use(express.json())
 //using cors
 app.use(cors())
 //connectin to mongoDB local database
-mongoose.connect("mongodb://localhost:27017/canteen");
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
+    console.log("Connected to MongoDB Atlas...");
+}).catch((err) => {
+    console.error("MongoDB connection error:", err);
+});
 console.log("Connected to database...");
 
 
