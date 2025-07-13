@@ -10,7 +10,7 @@ import Login from './Components/Login';
 import LoginContext from './Context/LoginContext';
 import UserContext from './Context/UserContext';
 import SignUp from './Components/SignUp';
-
+import UserBox from './Components/UserBox';
 function App() {
   const location = useLocation();
   const isLoginPage = location.pathname === '/login';
@@ -23,7 +23,7 @@ function App() {
       <Routes>
       <Route path='/login' element={<Login/>} />
       <Route path='/signup' element={<SignUp/>}/>
-
+      <Route path='/user' element={<UserBox/>}/>
         <Route path="/home/*" element={<Home />}>
           <Route path="veg" element={<Veg />} />
           <Route path="non-veg" element={<NonVeg />} />

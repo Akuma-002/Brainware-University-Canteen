@@ -81,7 +81,7 @@ const Navbar = () => {
                 {!loginStatus?(<button onClick={()=>{navigate("/login")}} className="bg-black text-white px-8 py-2.5 rounded-full ml-4 transition-all duration-500">
                     Login
                 </button>) : (
-                    <div class="flex flex-wrap justify-center gap-12">
+                    <NavLink to={"/user"}><div class="flex flex-wrap justify-center gap-12">
     <div className="relative">
         <img className="h-8 w-8 rounded-full"
             src={avatar}
@@ -90,7 +90,7 @@ const Navbar = () => {
             <p className="text-white text-xxs">{cart}</p>
         </div>
     </div>
-</div>)}
+</div></NavLink>)}
             </div>
 
             {/* Mobile Menu Button */}
