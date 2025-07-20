@@ -5,7 +5,11 @@ import { useContext } from 'react';
 import { LoginDataContext } from '../Context/LoginContext';
 import { UserDataContext } from '../Context/UserContext';
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
 const Navbar = () => {
+    const location = useLocation();
+    const isUserPage = location.pathname === '/user';
     const navigate = useNavigate()
     const loginData = useContext(LoginDataContext);
     const userData = useContext(UserDataContext);
@@ -49,12 +53,13 @@ const Navbar = () => {
     console.log(name);
     console.log(avatar);
     return (
-        <nav  className={`fixed top-0 left-0  w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50 ${isScrolled ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4" : "py-4 md:py-6"}`}>
+        <nav className={`fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50 ${(isScrolled || isUserPage) ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4" : "py-4 md:py-6"}`}>
             {/* Logo */}
+            
             <NavLink to="/home" >
             <div className="flex gap-2 justify-center">
                 <img src={"/logo.png"} alt="logo" className={`h-11 ${isScrolled ? "box-shadow: var(--shadow-10xs)" : ""}`} />
-                <p className={`h-11 text-md py-2  ${isScrolled ? "text-black" : "text-white"}`}>Brainware University Canteen</p>
+                <p className={`h-11 text-md py-2 ${isScrolled || isUserPage ? "text-black" : "text-white"}`}>Brainware University Canteen</p>
             </div>
                 
             </NavLink>
@@ -62,12 +67,12 @@ const Navbar = () => {
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-4 lg:gap-8">
                 {navLinks.map((link, i) => (
-                    <NavLink key={i} to={link.path} className={`group flex flex-col gap-0.5 ${isScrolled ? "text-gray-700" : "text-white"}`}>
+                    <NavLink key={i} to={link.path} className={`group flex flex-col gap-0.5 ${isScrolled || isUserPage ? "text-gray-700" : "text-white"}`}>
                         {link.name}
                         <div className={`${isScrolled ? "bg-gray-700" : "bg-white"} h-0.5 w-0 group-hover:w-full transition-all duration-300`} />
                     </NavLink>
                 ))}
-                <button className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${isScrolled ? 'text-black' : 'text-white'} transition-all`}>
+                <button className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${isScrolled || isUserPage ? 'text-black' : 'text-white'} transition-all`}>
                     New Launch
                 </button>
             </div>

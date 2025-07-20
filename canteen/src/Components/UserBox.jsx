@@ -7,25 +7,26 @@ function UserBox() {
   const loginData = useContext(LoginDataContext);
   const userData = useContext(UserDataContext);
   const { loginStatus } = loginData;
-  const {
-    avatar,
-    cart
-  } = userData;
-
+const {name, setName, email, setEmail, phoneNumber, setPhoneNumber, setStudentCode, password, setPassword,avatar, setAvatar, role, setRole, cart, setCart, orders, setOrders} = userData
+    
   if (!loginStatus) {
     return <Navigate to="/login" />;
   }
 
   return (
-    <div className="userBox px-10">
-      <div className="flex flex-wrap justify-center gap-12">
+    <div className="userBox">
+      <div className="flex flex-wrap justify-end gap-12 userAvtar">
         <div className="relative">
-          <img className="h-8 w-8 rounded-full" src={avatar} alt="userImage1" />
-          <div className="absolute -top-1 -right-1 flex items-center justify-center h-4 w-4 bg-blue-500 rounded-full">
-            <p className="text-white text-xxs">{cart}</p>
-          </div>
+          <img className="pic rounded-full" src={avatar} alt="userImage1" />
         </div>
       </div>
+      <div className='nameBox'>
+        <h1>{name}</h1>
+        <h2>{email}</h2>
+        <h2>{phoneNumber==0 ? " " : phoneNumber}</h2>
+        
+      </div>
+      
     </div>
   );
 }
