@@ -72,9 +72,7 @@ const Navbar = () => {
                         <div className={`${isScrolled ? "bg-gray-700" : "bg-white"} h-0.5 w-0 group-hover:w-full transition-all duration-300`} />
                     </NavLink>
                 ))}
-                <button className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${isScrolled || isUserPage ? 'text-black' : 'text-white'} transition-all`}>
-                    New Launch
-                </button>
+                
             </div>
 
             {/* Desktop Right */}
@@ -121,10 +119,6 @@ const Navbar = () => {
                         {link.name}
                     </NavLink>
                 ))}
-
-                <button className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all">
-                    New Launch
-                </button>
 
                 {!loginStatus?(<button onClick={()=>{navigate("/login")}} className="bg-black text-white px-8 py-2.5 rounded-full ml-4 transition-all duration-500">
                     Login
