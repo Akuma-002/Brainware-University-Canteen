@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/Akuma-002/Brainware-University-Canteen/issues"
   },
-  "homepage": "https://github.com/Akuma-002/Brainware-University-Canteen#readme"
+  "homepage": "https://github.com/Akuma-002/Brainware-University-Canteen#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0"
+  }
 }

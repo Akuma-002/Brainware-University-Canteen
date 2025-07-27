@@ -4,6 +4,18 @@ const cors = require("cors");
 const UserModel = require("./Models/UserModel");
 const notifier = require('node-notifier');
 require("dotenv").config();  // Add this line first
+
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
+const plainPassword = 'user123';
+
+bcrypt.hash(plainPassword, saltRounds, function(err, hashedPassword) {
+    if (err) throw err;
+
+});
+
+
 //backend port 
 const port = 2007
 //creating app using express
@@ -25,13 +37,17 @@ console.log("Connected to database...");
 
 
 app.post("/signup", (req, res)=>{
-    const {studentCode} = req.body;
+    const {studentCode, password, ...rest} = req.body;
     UserModel.findOne({studentCode: studentCode})
     .then((user)=>{
         if(!user){
-            UserModel.create(req.body)
-            .then((result)=>{res.json(result)})
-            .catch((error)=>{res.json(error)});
+            // Hash password before saving
+            bcrypt.hash(password, saltRounds, function(err, hashedPassword) {
+                if (err) return res.json({ success: false, message: 'Error hashing password' });
+                UserModel.create({studentCode, password: hashedPassword, ...rest})
+                .then((result)=>{res.json(result)})
+                .catch((error)=>{res.json(error)});
+            });
         }
         else{
             // Send notification
@@ -51,12 +67,15 @@ app.post("/login", (req, res)=>{
     UserModel.findOne({studentCode: studentCode})
     .then((user)=>{
         if(user){
-            if(user.password === password){
-                res.json("Success");
-            }
-            else{
-                res.json("Worng password");
-            }
+            bcrypt.compare(password, user.password, function(err, result) {
+                if (err) return res.json({ success: false, message: 'Error comparing password' });
+                if(result){
+                    res.json("Success");
+                }
+                else{
+                    res.json("Worng password");
+                }
+            });
         }else{
             // Send notification
             res.json("User Not Found");
