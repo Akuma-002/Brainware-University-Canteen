@@ -11,6 +11,7 @@ import LoginContext from './Context/LoginContext';
 import UserContext from './Context/UserContext';
 import SignUp from './Components/SignUp';
 import UserBox from './Components/UserBox';
+import Cart from './Components/Cart';
 function App() {
   const location = useLocation();
   const isLoginPage = location.pathname === '/login';
@@ -24,6 +25,7 @@ function App() {
       <Route path='/login' element={<Login/>} />
       <Route path='/signup' element={<SignUp/>}/>
       <Route path='/user' element={<UserBox/>}/>
+      <Route path='/cart' element={<Cart/>}/>
         <Route path="/home/*" element={<Home />}>
           <Route path="veg" element={<Veg />} />
           <Route path="non-veg" element={<NonVeg />} />

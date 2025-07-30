@@ -1,4 +1,5 @@
 
+
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -101,16 +102,16 @@ app.post("/add-to-cart", (req, res) => {
     if (!studentCode || !item) {
         return res.status(400).json({ success: false, message: "studentCode and item are required" });
     }
-    // Store the full item object in the cart
+    // Store the full item object in the cart with correct property names
     UserModel.findOneAndUpdate(
         { studentCode },
         { $push: { cart: {
-            foodName: item.name || item.foodName || '',
-            quantity: item.quantity || 1,
-            price: item.price || 0,
+            name: item.name || '',
             type: item.type || '',
             description: item.description || '',
-            image: item.image || item.Image || ''
+            price: item.price || 0,
+            image: item.image || '',
+            quantity: item.quantity || 1
         } } },
         { new: true }
     )
@@ -124,6 +125,28 @@ app.post("/add-to-cart", (req, res) => {
         console.error("Add to cart error:", error);
         res.status(500).json({ success: false, message: "Server error" });
     });
+    // Update cart endpoint
+app.post("/update-cart", (req, res) => {
+    const { studentCode, cart } = req.body;
+    if (!studentCode || !Array.isArray(cart)) {
+        return res.status(400).json({ success: false, message: "studentCode and cart are required" });
+    }
+    UserModel.findOneAndUpdate(
+        { studentCode },
+        { $set: { cart } },
+        { new: true }
+    )
+    .then((user) => {
+        if (!user) {
+            return res.status(404).json({ success: false, message: "User not found" });
+        }
+        res.json({ success: true, cart: user.cart });
+    })
+    .catch((error) => {
+        console.error("Update cart error:", error);
+        res.status(500).json({ success: false, message: "Server error" });
+    });
+});
 });
 
 

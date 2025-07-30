@@ -37,7 +37,7 @@ function UserBox() {
           <hr />
           <p>{orders.length}</p>
         </div>
-        <div className='cartBox'>
+        <div className='cartBox'onClick={()=>{navigate("/cart")}}>
           <h3>Cart</h3>
           <hr />
           <p>{cart.length}</p>
