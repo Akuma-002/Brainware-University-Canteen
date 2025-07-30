@@ -1,3 +1,4 @@
+
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -36,6 +37,10 @@ mongoose.connect(process.env.MONGO_URI, {
 console.log("Connected to database...");
 
 
+
+
+
+
 app.post("/signup", (req, res)=>{
     const {studentCode, password, ...rest} = req.body;
     UserModel.findOne({studentCode: studentCode})
@@ -70,19 +75,59 @@ app.post("/login", (req, res)=>{
             bcrypt.compare(password, user.password, function(err, result) {
                 if (err) return res.json({ success: false, message: 'Error comparing password' });
                 if(result){
-                    res.json("Success");
+                    // Exclude password from response
+                    const { password, ...userData } = user.toObject();
+                    res.json({ success: true, user: userData });
                 }
                 else{
-                    res.json("Worng password");
+                    res.json({ success: false, message: "Wrong password" });
                 }
             });
         }else{
             // Send notification
-            res.json("User Not Found");
+            res.json({ success: false, message: "User Not Found" });
         }
     })
-    .catch((error)=>{console.log(error)});
+    .catch((error)=>{
+        console.log(error);
+        res.json({ success: false, message: "Server error" });
+    });
 })
+
+
+// Add to cart endpoint
+app.post("/add-to-cart", (req, res) => {
+    const { studentCode, item } = req.body;
+    if (!studentCode || !item) {
+        return res.status(400).json({ success: false, message: "studentCode and item are required" });
+    }
+    // Store the full item object in the cart
+    UserModel.findOneAndUpdate(
+        { studentCode },
+        { $push: { cart: {
+            foodName: item.name || item.foodName || '',
+            quantity: item.quantity || 1,
+            price: item.price || 0,
+            type: item.type || '',
+            description: item.description || '',
+            image: item.image || item.Image || ''
+        } } },
+        { new: true }
+    )
+    .then((user) => {
+        if (!user) {
+            return res.status(404).json({ success: false, message: "User not found" });
+        }
+        res.json({ success: true, cart: user.cart });
+    })
+    .catch((error) => {
+        console.error("Add to cart error:", error);
+        res.status(500).json({ success: false, message: "Server error" });
+    });
+});
+
+
+
 app.get("/user", async (req, res) => {
     const { studentCode } = req.query;
     if (!studentCode) {

@@ -33,14 +33,12 @@ const UserSchema = new mongoose.Schema({
 
     // Cart
     cart: [{
-        foodName : {
-            type: String,
-            required: [true, 'Food name is required'] 
-        },
-        quantity: { 
-            type: Number, 
-            default: 1 
-        }
+        name: { type: String, required: true },
+        type: { type: String },
+        description: { type: String },
+        price: { type: Number },
+        image: { type: String },
+        quantity: { type: Number, default: 1 }
     }],
 
     // Order History

@@ -4,12 +4,10 @@ import { UserDataContext } from '../Context/UserContext';
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 function UserBox() {
-  const loginData = useContext(LoginDataContext);
   const userData = useContext(UserDataContext);
   const navigate = useNavigate();
-  const { loginStatus } = loginData;
-const {name, setName, email, setEmail, phoneNumber, setPhoneNumber, setStudentCode, password, setPassword,avatar, setAvatar, role, setRole, cart, setCart, orders, setOrders} = userData
-    
+  const { loginStatus, name, setName, email, setEmail, phoneNumber, setPhoneNumber, setStudentCode, password, setPassword, avatar, setAvatar, role, setRole, cart, setCart, orders, setOrders } = userData;
+
   if (!loginStatus) {
     return <Navigate to="/login" />;
   }

@@ -1,31 +1,77 @@
 import axios from 'axios';
 import React, { useContext } from 'react'
 import { LoginDataContext } from '../Context/LoginContext'
+import { UserDataContext } from '../Context/UserContext';
 import bgImage from '/assets/images/loginBG.png';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const data = useContext(LoginDataContext);
+  const userData = useContext(UserDataContext);
   const navigate = useNavigate();
-  const {studentCode, password, loginStatus,  setStudentCode, setPassword, setLoginStatus} = data
-  const submitHandler = (e)=>{
-        e.preventDefault()
-        axios.post("http://localhost:2007/login", {studentCode, password})
-        .then((result)=>{
-          if(result.data === "Success"){
-            console.log("Login");
-            setLoginStatus(true);
-            navigate("/home");
-          }
-          else if(result.data === "Worng password"){
-            console.log("Wrong Password")
-          }
-          else if(result.data === "User Not Found"){
-            console.log("User not found");
-          }
-        })
-        .catch((error)=>{console.log(error)});
-    }
+  const {studentCode, password, setStudentCode, setPassword, setLoginStatus} = data;
+  const {setName, setEmail, setPhoneNumber, setAvatar, setRole, setCart, setOrders, setLoginStatus: setUserLoginStatus, setStudentCode: setUserStudentCode, setPassword: setUserPassword} = userData;
+  const submitHandler = (e) => {
+    e.preventDefault();
+    axios.post("http://localhost:2007/login", { studentCode, password })
+      .then((result) => {
+        if (result.data.success) {
+          const user = result.data.user;
+          // Set all user data in both contexts
+          setLoginStatus(true);
+          setUserLoginStatus(true);
+          setName(user.name || "");
+          setEmail(user.email || "");
+          setPhoneNumber(user.phoneNumber || 0);
+          setAvatar(user.avatar || "");
+          setRole(user.role || "customer");
+          setCart(user.cart || []);
+          setOrders(user.orders || []);
+          setUserStudentCode(user.studentCode || "");
+          setUserPassword("");
+          // Save to localStorage immediately
+          localStorage.setItem('userData', JSON.stringify({
+            name: user.name || "",
+            email: user.email || "",
+            phoneNumber: user.phoneNumber || 0,
+            studentCode: user.studentCode || "",
+            password: "",
+            avatar: user.avatar || "",
+            role: user.role || "customer",
+            cart: user.cart || [],
+            orders: user.orders || [],
+            loginStatus: true
+          }));
+          localStorage.setItem('loginData', JSON.stringify({
+            name: user.name || "",
+            studentCode: user.studentCode || "",
+            email: user.email || "",
+            phoneNumber: user.phoneNumber || 0,
+            role: user.role || "customer",
+            password: "",
+            loginStatus: true
+          }));
+          navigate("/home");
+        } else {
+          setLoginStatus(false);
+          setUserLoginStatus(false);
+          setName("");
+          setEmail("");
+          setPhoneNumber(0);
+          setAvatar("");
+          setRole("");
+          setCart([]);
+          setOrders([]);
+          setUserStudentCode("");
+          setUserPassword("");
+          // Remove from localStorage
+          localStorage.removeItem('userData');
+          localStorage.removeItem('loginData');
+          alert(result.data.message || "Login failed");
+        }
+      })
+      .catch((error) => { console.log(error); });
+  }
   return (
     <>
     <div className='loginBackground' style={{ backgroundImage: `url(${bgImage})` }}></div>

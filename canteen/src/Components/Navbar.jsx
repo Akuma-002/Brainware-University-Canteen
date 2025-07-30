@@ -13,11 +13,11 @@ const Navbar = () => {
     const navigate = useNavigate()
     const loginData = useContext(LoginDataContext);
     const userData = useContext(UserDataContext);
-    const {loginStatus, setLoginStatus, studentCode} = loginData;
-    const {name, setName, email, setEmail, phoneNumber, setPhoneNumber, setStudentCode, password, setPassword,avatar, setAvatar, role, setRole, cart, setCart, orders, setOrders} = userData
+    const {loginStatus: userLoginStatus, setLoginStatus: setUserLoginStatus, name, setName, email, setEmail, phoneNumber, setPhoneNumber, studentCode, setStudentCode, password, setPassword,avatar, setAvatar, role, setRole, cart, setCart, orders, setOrders} = userData;
+    const {setLoginStatus} = loginData;
     
     useEffect(() => {
-        if (loginStatus && studentCode) {
+        if (userLoginStatus && studentCode) {
             axios.get("http://localhost:2007/user", { params: { studentCode } })
                 .then((result) => {
                     setName(result.data.name);
@@ -32,7 +32,7 @@ const Navbar = () => {
                     console.error(error);
                 });
         }
-    }, [loginStatus, studentCode]);
+    }, [userLoginStatus, studentCode]);
     const navLinks = [
         { name: 'Home', path: '/home' },
         { name: 'Products', path: '/product' },
@@ -81,19 +81,47 @@ const Navbar = () => {
                     <circle cx="11" cy="11" r="8" />
                     <line x1="21" y1="21" x2="16.65" y2="16.65" />
                 </svg>
-                {!loginStatus?(<button onClick={()=>{navigate("/login")}} className="bg-black text-white px-8 py-2.5 rounded-full ml-4 transition-all duration-500">
-                    Login
-                </button>) : (
-                    <NavLink to={"/user"}><div class="flex flex-wrap justify-center gap-12">
-    <div className="relative">
-        <img className="h-8 w-8 rounded-full"
-            src={avatar}
-            alt="userImage1"/>
-        <div className="absolute -top-1 -right-1 flex items-center justify-center h-4 w-4 bg-blue-500 rounded-full">
-            <p className="text-white text-xxs">{cart}</p>
-        </div>
-    </div>
-</div></NavLink>)}
+                {!userLoginStatus ? (
+                    <button onClick={() => { navigate("/login") }} className="bg-black text-white px-8 py-2.5 rounded-full ml-4 transition-all duration-500">
+                        Login
+                    </button>
+                ) : (
+                    <>
+                        <NavLink to={"/user"}>
+                            <div className="flex flex-wrap justify-center gap-12">
+                                <div className="relative">
+                                    <img className="h-8 w-8 rounded-full" src={avatar} alt="userImage1" />
+                                    <div className="absolute -top-1 -right-1 flex items-center justify-center h-4 w-4 bg-blue-500 rounded-full">
+                                        <p className="text-white text-xxs">{Array.isArray(cart) ? cart.length : 0}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </NavLink>
+                        <button
+                            onClick={() => {
+                                // Robust logout: clear all login state and user data
+                                setUserLoginStatus(false);
+                                setLoginStatus(false);
+                                setName("");
+                                setEmail("");
+                                setPhoneNumber(0);
+                                setStudentCode("");
+                                setPassword("");
+                                setAvatar("");
+                                setRole("");
+                                setCart([]);
+                                setOrders([]);
+                                // Remove from localStorage
+                                localStorage.removeItem('userData');
+                                localStorage.removeItem('loginData');
+                                navigate("/login");
+                            }}
+                            className="bg-red-500 text-white px-4 py-2 rounded-full ml-2 transition-all duration-500"
+                        >
+                            Logout
+                        </button>
+                    </>
+                )}
             </div>
 
             {/* Mobile Menu Button */}
@@ -120,19 +148,20 @@ const Navbar = () => {
                     </NavLink>
                 ))}
 
-                {!loginStatus?(<button onClick={()=>{navigate("/login")}} className="bg-black text-white px-8 py-2.5 rounded-full ml-4 transition-all duration-500">
-                    Login
-                </button>) : (
-                    <div class="flex flex-wrap justify-center gap-12">
-    <div className="relative">
-        <img className="h-8 w-8 rounded-full"
-            src={avatar}
-            alt="userImage1"/>
-        <div className="absolute -top-1 -right-1 flex items-center justify-center h-4 w-4 bg-blue-500 rounded-full">
-            <p className="text-white text-xxs">{cart}</p>
-        </div>
-    </div>
-</div>)}
+                {!userLoginStatus ? (
+                    <button onClick={() => { navigate("/login") }} className="bg-black text-white px-8 py-2.5 rounded-full ml-4 transition-all duration-500">
+                        Login
+                    </button>
+                ) : (
+                    <div className="flex flex-wrap justify-center gap-12">
+                        <div className="relative">
+                            <img className="h-8 w-8 rounded-full" src={avatar} alt="userImage1" />
+                            <div className="absolute -top-1 -right-1 flex items-center justify-center h-4 w-4 bg-blue-500 rounded-full">
+                                <p className="text-white text-xxs">{Array.isArray(cart) ? cart.length : 0}</p>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
         </nav>
     );
