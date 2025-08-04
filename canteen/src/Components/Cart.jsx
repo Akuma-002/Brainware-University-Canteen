@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+  import React, { useContext } from 'react';
 import { UserDataContext } from '../Context/UserContext';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -17,7 +17,7 @@ const Cart = () => {
   // Increase quantity
   const increaseQty = async (index) => {
     const updatedCart = cart.map((item, i) => i === index ? { ...item, quantity: item.quantity + 1 } : item);
-    setCart(updatedCart);
+    setCart(updatedCart); 
     await axios.post('http://localhost:2007/update-cart', { studentCode, cart: updatedCart });
   };
 
