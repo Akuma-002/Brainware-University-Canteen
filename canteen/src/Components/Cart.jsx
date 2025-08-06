@@ -10,6 +10,7 @@ const Cart = () => {
   // Remove item from cart
   const removeItem = async (index) => {
     const updatedCart = cart.filter((_, i) => i !== index);
+   
     setCart(updatedCart);
     await axios.post('http://localhost:2007/update-cart', { studentCode, cart: updatedCart });
   };
