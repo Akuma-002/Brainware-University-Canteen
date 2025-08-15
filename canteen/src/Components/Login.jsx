@@ -13,7 +13,7 @@ const Login = () => {
   const {setName, setEmail, setPhoneNumber, setAvatar, setRole, setCart, setOrders, setLoginStatus: setUserLoginStatus, setStudentCode: setUserStudentCode, setPassword: setUserPassword} = userData;
   const submitHandler = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:2007/login", { studentCode, password })
+    axios.post("https://brainware-university-canteen.onrender.com/login", { studentCode, password })
       .then((result) => {
         if (result.data.success) {
           const user = result.data.user;

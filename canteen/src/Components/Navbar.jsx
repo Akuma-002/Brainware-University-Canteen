@@ -18,7 +18,7 @@ const Navbar = () => {
     
     useEffect(() => {
         if (userLoginStatus && studentCode) {
-            axios.get("http://localhost:2007/user", { params: { studentCode } })
+            axios.get("https://brainware-university-canteen.onrender.com/user", { params: { studentCode } })
                 .then((result) => {
                     setName(result.data.name);
                     setEmail(result.data.email);

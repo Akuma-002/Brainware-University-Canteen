@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const addToCartAPI = async (studentCode, item) => {
   try {
-    const response = await axios.post('http://localhost:2007/add-to-cart', {
+    const response = await axios.post('https://brainware-university-canteen.onrender.com/add-to-cart', {
       studentCode,
       item
     });

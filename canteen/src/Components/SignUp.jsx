@@ -10,7 +10,7 @@ const SignUp = () => {
   const {name, studentCode, email, phoneNumber, password,setName, setStudentCode, setEmail, setPhoneNumber, setPassword} = data;
     const submitHandler = (e)=>{
         e.preventDefault()
-        axios.post("http://localhost:2007/signup", {name, email, phoneNumber, studentCode, password})
+        axios.post("https://brainware-university-canteen.onrender.com/signup", {name, email, phoneNumber, studentCode, password})
         .then((result)=>{console.log(result); navigate("/login")})
         .catch((error)=>{console.log(error)});
     }
