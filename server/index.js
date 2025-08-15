@@ -7,7 +7,7 @@ const UserModel = require("./Models/UserModel");
 const notifier = require('node-notifier');
 require("dotenv").config();  // Add this line first
 
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const saltRounds = 10;
 
 const plainPassword = 'user123';
