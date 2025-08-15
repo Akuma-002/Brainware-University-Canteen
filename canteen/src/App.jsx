@@ -15,6 +15,7 @@ import Cart from './Components/Cart';
 import Contact from './Components/Contact';
 import AboutUsPage from './Components/AboutUsPage';
 import UserProfilePage from './Components/UserProfilePage';
+import MainPage from './Components/MainPage';
 function App() {
   const location = useLocation();
   const isLoginPage = location.pathname === '/login';
@@ -31,11 +32,12 @@ function App() {
       <Route path='/cart' element={<Cart/>}/>
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/about' element={<AboutUsPage/>}/>
-        <Route path="/home/*" element={<Home />}>
-          <Route path="veg" element={<Veg />} />
-          <Route path="non-veg" element={<NonVeg />} />
-          <Route path="both" element={<Both />} />
-          
+      <Route path="/" element={<MainPage />}/>
+      <Route path="/home/*" element={<Home />}>
+        <Route path="veg" element={<Veg />} />
+        <Route path="non-veg" element={<NonVeg />} />
+        <Route path="both" element={<Both />} />
+      
           {/* Optional: Default content for /home */}
           {/* <Route index element={<Veg />} /> */}
         </Route>
