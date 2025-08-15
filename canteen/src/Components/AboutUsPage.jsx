@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import React from 'react'; // We will create this CSS file
 
 // Mock data for the team members
@@ -63,7 +64,7 @@ const AboutUsPage = () => {
             {/* 5. Call to Action Section */}
             <section className="cta-section">
                 <h2>Ready to Grab a Bite?</h2>
-                <a href="/home" className="cta-button">View The Menu</a>
+                <NavLink to="/home" className="cta-button">View The Menu</NavLink>
             </section>
         </div>
     );

@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import loginBG from '../../public/assets/images/loginBG.png';
 import pic1 from '../../public/web/chole-bhature-recipe.png'
 import pic2 from '../../public/web/Egg Curry.png'
@@ -28,7 +29,7 @@ const MainPage = () => {
                 <div className="hero-content">
                     <h1>Fresh, Fast & Deliciously Simple</h1>
                     <p>Your campus go-to for a great meal, every time.</p>
-                    <a href="/home" className="hero-cta-button">Order Online Now</a>
+                    <NavLink to="/home" className="hero-cta-button">Order Online Now</NavLink>
                 </div>
             </section>
 
@@ -77,7 +78,7 @@ const MainPage = () => {
             <section className="final-cta-section">
                 <h2>Hungry Yet?</h2>
                 <p>Explore our full menu and find your new favorite meal today.</p>
-                <a href="/home" className="hero-cta-button">View The Full Menu</a>
+                <NavLink to="/home" className="hero-cta-button">View The Full Menu</NavLink>
             </section>
         </div>
     );
