@@ -19,7 +19,7 @@ bcrypt.hash(plainPassword, saltRounds, function(err, hashedPassword) {
 
 
 //backend port 
-const port = 2007
+const port = process.env.PORT || 2007;
 //creating app using express
 const app = express()
 //parsing json data from frontend
@@ -128,7 +128,10 @@ app.post("/add-to-cart", (req, res) => {
     // Update cart endpoint
 app.post("/update-cart", (req, res) => {
     const { studentCode, cart } = req.body;
+    console.log("[update-cart] studentCode:", studentCode);
+    console.log("[update-cart] cart:", JSON.stringify(cart));
     if (!studentCode || !Array.isArray(cart)) {
+        console.log("[update-cart] Missing studentCode or cart is not array");
         return res.status(400).json({ success: false, message: "studentCode and cart are required" });
     }
     UserModel.findOneAndUpdate(
@@ -138,8 +141,10 @@ app.post("/update-cart", (req, res) => {
     )
     .then((user) => {
         if (!user) {
+            console.log("[update-cart] User not found for studentCode:", studentCode);
             return res.status(404).json({ success: false, message: "User not found" });
         }
+        console.log("[update-cart] Cart updated for user:", user.studentCode);
         res.json({ success: true, cart: user.cart });
     })
     .catch((error) => {

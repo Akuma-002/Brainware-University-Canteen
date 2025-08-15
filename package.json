@@ -6,11 +6,14 @@
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.12"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview"
+}
+,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Akuma-002/Brainware-University-Canteen.git"
@@ -24,6 +27,9 @@
   },
   "homepage": "https://github.com/Akuma-002/Brainware-University-Canteen#readme",
   "dependencies": {
-    "bcrypt": "^6.0.0"
+    "bcrypt": "^6.0.0",
+    "lodash.debounce": "^4.0.8",
+    "preline": "^3.2.3",
+    "react-icons": "^5.5.0"
   }
 }

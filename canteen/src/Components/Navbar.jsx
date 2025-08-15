@@ -35,7 +35,6 @@ const Navbar = () => {
     }, [userLoginStatus, studentCode]);
     const navLinks = [
         { name: 'Home', path: '/home' },
-        { name: 'Products', path: '/product' },
         { name: 'Contact', path: '/contact' },
         { name: 'About', path: '/about' },
     ];
